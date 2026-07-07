@@ -29,9 +29,7 @@ export interface Doctor extends BaseProduct {
 }
 
 export interface Service extends BaseProduct {
-  price: number;
-  oldPrice?: number;
-  stock: number;
+  duration?: string;
 }
 
 export type Product = Doctor | Service;

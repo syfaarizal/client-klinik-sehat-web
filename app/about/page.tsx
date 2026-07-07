@@ -92,7 +92,11 @@ export default function AboutPage() {
 
       {/* Values Section */}
       <div className="mb-16">
-        <SectionHeading title="Nilai-Nilai Kami" subtitle="Prinsip yang kami pegang dalam memberikan pelayanan" className="mb-10" />
+        <SectionHeading
+          title="Nilai-Nilai Kami"
+          description="Prinsip yang kami pegang dalam memberikan pelayanan"
+          className="mb-10"
+        />
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {values.map((value) => (
             <div
@@ -121,7 +125,11 @@ export default function AboutPage() {
 
       {/* Facilities Section */}
       <div className="mb-16">
-        <SectionHeading title="Fasilitas Klinik" subtitle="Dilengkapi dengan infrastruktur yang mendukung pelayanan optimal" className="mb-10" />
+        <SectionHeading
+          title="Fasilitas Klinik"
+          description="Dilengkapi dengan infrastruktur yang mendukung pelayanan optimal"
+          className="mb-10"
+        />
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
           {facilities.map((facility) => (
             <div

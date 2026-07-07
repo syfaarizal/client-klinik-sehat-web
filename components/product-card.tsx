@@ -3,12 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Calendar } from "lucide-react";
-import type { Product, Service } from "@/types";
+import { Calendar, Clock } from "lucide-react";
+import type { Product, Service, Doctor } from "@/types";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { StarRating } from "@/components/shared/star-rating";
-import { formatCurrency } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 
 interface ProductCardProps {
@@ -17,12 +16,15 @@ interface ProductCardProps {
 }
 
 function isService(product: Product): product is Service {
-  return "price" in product;
+  return "duration" in product;
+}
+
+function isDoctor(product: Product): product is Doctor {
+  return "schedule" in product;
 }
 
 export function ProductCard({ product, index = 0 }: ProductCardProps) {
   const { toast } = useToast();
-  const isFree = isService(product) ? product.price === 0 : false;
 
   return (
     <motion.div
@@ -53,9 +55,15 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
           </h3>
         </Link>
         <StarRating rating={product.rating} reviewCount={product.reviewCount} />
+        {isService(product) && product.duration && (
+          <span className="flex items-center gap-1.5 text-xs text-muted">
+            <Clock className="h-3.5 w-3.5" />
+            {product.duration}
+          </span>
+        )}
         <div className="mt-auto flex items-center justify-between pt-2">
-          <span className="font-bold text-primary">
-            {isService(product) ? (isFree ? "Gratis" : formatCurrency(product.price)) : "Lihat Profil"}
+          <span className="text-xs font-medium text-primary">
+            {isDoctor(product) ? "Lihat Profil" : "Lihat Detail"}
           </span>
           <Button
             size="icon"

@@ -4,25 +4,25 @@ import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Calendar, ShieldCheck, Clock, Award, Phone } from "lucide-react";
+import { Calendar, ShieldCheck, Clock, Award, Phone, UserCheck } from "lucide-react";
 import type { Product, Service, Doctor } from "@/types";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { StarRating } from "@/components/shared/star-rating";
-import { formatCurrency, cn } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 
 interface ProductDetailProps {
   product: Product;
 }
 
-function isService(product: Product): product is Service {
-  return "price" in product;
-}
-
 function isDoctor(product: Product): product is Doctor {
   return "schedule" in product;
+}
+
+function isService(product: Product): product is Service {
+  return "duration" in product;
 }
 
 export function ProductDetail({ product }: ProductDetailProps) {
@@ -30,7 +30,6 @@ export function ProductDetail({ product }: ProductDetailProps) {
   const { toast } = useToast();
 
   const gallery = [product.image, ...product.gallery.filter((img) => img !== product.image)];
-  const isFree = isService(product) && product.price === 0;
 
   return (
     <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
@@ -72,20 +71,19 @@ export function ProductDetail({ product }: ProductDetailProps) {
           <StarRating rating={product.rating} reviewCount={product.reviewCount} />
         </div>
 
-        {isService(product) ? (
+        {/* Duration or Schedule */}
+        {isService(product) && product.duration && (
           <div className="inline-flex w-fit items-center gap-2 rounded-full bg-primary/10 px-4 py-2">
-            <span className="text-2xl font-bold text-primary">
-              {isFree ? "Gratis" : formatCurrency(product.price)}
-            </span>
-            {!isFree && <span className="text-sm text-muted">/ sesi</span>}
+            <Clock className="h-5 w-5 text-primary" />
+            <span className="text-sm font-medium text-primary">Durasi: {product.duration}</span>
           </div>
-        ) : (
-          isDoctor(product) && (
-            <div className="inline-flex w-fit items-center gap-2 rounded-full bg-primary/10 px-4 py-2">
-              <Clock className="h-5 w-5 text-primary" />
-              <span className="text-sm font-medium text-primary">{product.schedule}</span>
-            </div>
-          )
+        )}
+
+        {isDoctor(product) && (
+          <div className="inline-flex w-fit items-center gap-2 rounded-full bg-primary/10 px-4 py-2">
+            <Clock className="h-5 w-5 text-primary" />
+            <span className="text-sm font-medium text-primary">{product.schedule}</span>
+          </div>
         )}
 
         <p className="text-muted leading-relaxed">{product.description}</p>

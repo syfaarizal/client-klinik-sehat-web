@@ -12,7 +12,7 @@ interface ProductsGridProps {
   initialCategory?: string;
 }
 
-type SortOption = "relevance" | "price-asc" | "price-desc" | "rating";
+type SortOption = "relevance" | "rating";
 
 export function ProductsGrid({ products, categories, initialCategory }: ProductsGridProps) {
   const [activeCategory, setActiveCategory] = React.useState<string>(initialCategory ?? "all");
@@ -29,8 +29,6 @@ export function ProductsGrid({ products, categories, initialCategory }: Products
         : products.filter((product) => product.categorySlug === activeCategory);
 
     result = [...result];
-    if (sort === "price-asc") result.sort((a, b) => a.price - b.price);
-    if (sort === "price-desc") result.sort((a, b) => b.price - a.price);
     if (sort === "rating") result.sort((a, b) => b.rating - a.rating);
 
     return result;
@@ -75,8 +73,6 @@ export function ProductsGrid({ products, categories, initialCategory }: Products
             className="rounded-lg border border-border bg-white px-3 py-2 text-sm text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30"
           >
             <option value="relevance">Paling Relevan</option>
-            <option value="price-asc">Harga Terendah</option>
-            <option value="price-desc">Harga Tertinggi</option>
             <option value="rating">Rating Tertinggi</option>
           </select>
         </label>

@@ -111,7 +111,6 @@ export const services: Service[] = [
     slug: "pemeriksaan-umum",
     name: "Pemeriksaan Umum",
     categorySlug: "poli-umum",
-    price: 75000,
     rating: 4.8,
     reviewCount: 245,
     image: "/images/service-umum-detail.jpg",
@@ -121,14 +120,13 @@ export const services: Service[] = [
     description:
       "Layanan pemeriksaan umum meliputi anamnesis, pemeriksaan fisik, diagnosis, dan rekomendasi pengobatan. Dilakukan oleh dokter umum bersertifikat.",
     highlights: ["Dokter Bersertifikat", "Hasil Cepat", "Konsultasi Lengkap"],
-    stock: 100,
+    duration: "30 - 45 menit",
   },
   {
     id: "prod-2",
     slug: "tambal-gigi",
     name: "Tambal Gigi",
     categorySlug: "poli-gigi",
-    price: 150000,
     rating: 4.7,
     reviewCount: 189,
     image: "/images/service-tambal.jpg",
@@ -138,14 +136,13 @@ export const services: Service[] = [
     description:
       "Layanan penambalan gigi menggunakan bahan komposit berkualitas tinggi. Prosedur cepat, nyaman, dan hasilnya alami.",
     highlights: ["Bahan Premium", "Hasil Alami", "Painless"],
-    stock: 100,
+    duration: "45 - 60 menit",
   },
   {
     id: "prod-3",
     slug: "vaksinasi-dt",
     name: "Vaksinasi DT",
     categorySlug: "vaksinasi",
-    price: 250000,
     rating: 4.9,
     reviewCount: 156,
     image: "/images/service-vaksin.jpg",
@@ -155,14 +152,13 @@ export const services: Service[] = [
     description:
       "Vaksinasi DT untuk perlindungan terhadap penyakit Difteri dan Tetanus. Disuntikkan sesuai jadwal dan standar Kemenkes RI.",
     highlights: ["Standar Kemenkes", "Bersertifikat", "Imunisasi Lengkap"],
-    stock: 50,
+    duration: "15 - 30 menit",
   },
   {
     id: "prod-4",
     slug: "medical-check-up-basic",
     name: "Medical Check Up Basic",
     categorySlug: "medical-check-up",
-    price: 450000,
     rating: 4.8,
     reviewCount: 98,
     image: "/images/service-mcu.jpg",
@@ -172,14 +168,13 @@ export const services: Service[] = [
     description:
       "Paket MCU basic meliputi pemeriksaan darah lengkap, urin, dan konsultasi dokter. Cocok untuk screening kesehatan awal.",
     highlights: ["Pemeriksaan Darah Lengkap", "Konsultasi Dokter", "Hasil 1 Hari"],
-    stock: 40,
+    duration: "2 - 3 jam",
   },
   {
     id: "prod-5",
     slug: "konsultasi-kehamilan",
     name: "Konsultasi Kehamilan",
     categorySlug: "poli-kandungan",
-    price: 200000,
     rating: 4.9,
     reviewCount: 178,
     image: "/images/service-kehamilan.jpg",
@@ -189,14 +184,13 @@ export const services: Service[] = [
     description:
       "Layanan konsultasi kehamilan meliputi pemeriksaan USG, pemantauan kondisi ibu dan janin, serta konsultasi nutrisi kehamilan.",
     highlights: ["USG Tersedia", "Dokter Spesialis", "Pemantauan Lengkap"],
-    stock: 60,
+    duration: "45 - 60 menit",
   },
   {
     id: "prod-6",
     slug: "pemeriksaan-anak",
     name: "Pemeriksaan Anak",
     categorySlug: "poli-anak",
-    price: 100000,
     rating: 4.8,
     reviewCount: 134,
     image: "/images/service-anak.jpg",
@@ -206,14 +200,13 @@ export const services: Service[] = [
     description:
       "Layanan pemeriksaan anak meliputi evaluasi tumbuh kembang, imunisasi, dan penanganan penyakit anak. Dilakukan dengan pendekatan ramah anak.",
     highlights: ["Ramah Anak", "Imunisasi", "Tumbuh Kembang"],
-    stock: 80,
+    duration: "30 - 45 menit",
   },
   {
     id: "prod-7",
     slug: "pembersihan-karang-gigi",
     name: "Scalling Gigi",
     categorySlug: "poli-gigi",
-    price: 200000,
     rating: 4.7,
     reviewCount: 167,
     image: "/images/service-scalling.jpg",
@@ -222,14 +215,13 @@ export const services: Service[] = [
     description:
       "Layanan scalling atau pembersihan karang gigi menggunakan alat ultrasonic. Membersihkan plak dan karang gigi untuk kesehatan mulut optimal.",
     highlights: ["Ultrasonic", "Painless", "Whitening Effect"],
-    stock: 90,
+    duration: "30 - 45 menit",
   },
   {
     id: "prod-8",
     slug: "vaksinasi-covid-19",
     name: "Vaksinasi COVID-19",
     categorySlug: "vaksinasi",
-    price: 0,
     rating: 4.9,
     reviewCount: 456,
     image: "/images/service-vaksin-covid.jpg",
@@ -239,7 +231,7 @@ export const services: Service[] = [
     description:
       "Vaksinasi COVID-19 gratis untuk masyarakat. Tersedia berbagai merek vaksin sesuai kebijakan pemerintah.",
     highlights: ["Gratis", "Sesuai Kebijakan Govt", "Beragam Merek"],
-    stock: 200,
+    duration: "15 - 30 menit",
   },
 ];
 
