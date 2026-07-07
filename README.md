@@ -1,60 +1,86 @@
-# RasaKita — Website UMKM Kuliner
+# Klinik Sehat — Healthcare Clinic Website
 
-Website UMKM modern untuk brand kuliner (camilan lokal, frozen food, katering sehat, minuman kekinian) dibangun dengan Next.js 15 App Router, TypeScript, dan Tailwind CSS v4.
+A modern, responsive website for Klinik Sehat — a healthcare clinic offering general consultations, dental care, vaccinations, and specialized medical services. Built with Next.js 15 App Router, TypeScript, and Tailwind CSS v4.
 
-## Stack
+## Tech Stack
 
-- Next.js 15 (App Router, Server Components)
-- React 19 + TypeScript (strict mode)
-- Tailwind CSS v4
-- shadcn/ui pattern (Radix UI primitives + CVA)
-- Framer Motion
-- Lucide React
-- Swiper
+- **Next.js 15** — App Router, Server Components
+- **React 19** + TypeScript (strict mode)
+- **Tailwind CSS v4**
+- **shadcn/ui** — Radix UI primitives + CVA
+- **Framer Motion** — Animations
+- **Lucide React** — Icons
 
-## Menjalankan Proyek
+## Getting Started
 
 ```bash
 npm install
 npm run dev
 ```
 
-Buka [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:3000](http://localhost:3000).
 
-## Struktur Folder
+## Project Structure
 
 ```
-app/                  Routing (App Router)
-  page.tsx            Homepage
-  products/           Listing & detail produk
-  about/              Tentang kami
-  contact/            Kontak
+app/                    # App Router pages
+  page.tsx             # Homepage
+  about/               # About page
+  contact/             # Contact page
+  products/            # Services & doctors listing
+  products/[slug]/     # Individual service/doctor detail
+
 components/
-  ui/                 Primitive UI (button, card, sheet, dll)
-  sections/           Section-section halaman (Navbar, Hero, Footer, dll)
-  shared/             Komponen kecil reusable (StarRating, SectionHeading)
-data/                 Sumber data terpusat (products, categories, dll)
-types/                Definisi TypeScript
-hooks/                Custom hooks (use-toast)
-lib/                  Utility & constants
+  ui/                  # Primitive UI components (button, card, accordion, etc.)
+  sections/            # Page sections (navbar, hero, footer, etc.)
+  shared/              # Reusable small components (SectionHeading, StarRating)
+
+data/                   # Centralized data files
+  products.ts          # Doctors and services data
+  categories.ts        # Service categories
+  company.ts           # Company information
+  testimonials.ts      # Customer testimonials
+  features.ts           # Feature highlights
+  promo.ts             # Promotional content
+
+types/                  # TypeScript type definitions
+hooks/                  # Custom React hooks
+lib/                    # Utility functions and constants
+
 public/
-  images/             Placeholder gambar (ganti dengan aset asli)
-  icons/              Custom SVG icon
+  images/               # Image assets (replace with actual files)
+  icons/                # Custom SVG icons
 ```
 
-## Mengganti Gambar
+## Managing Content
 
-Semua gambar berada di `public/images/` dan direferensikan lewat data di folder `data/`. Cukup ganti file dengan nama yang sama tanpa perlu mengubah kode komponen.
+### Replacing Images
 
-## Mengganti Data
+All images are stored in `public/images/` and referenced through data files in `data/`. Replace files with matching names — no code changes required.
 
-Seluruh konten (produk, kategori, testimoni, kontak) terpusat di folder `data/` dalam bentuk file TypeScript, siap dihubungkan ke API/backend di kemudian hari dengan mengganti isi fungsi fetch data.
+### Updating Data
 
-## Warna & Tipografi
+All content (doctors, services, testimonials, company info) is centralized in the `data/` folder as TypeScript files. To connect to a backend or CMS, update the data fetching functions in these files.
 
-- Primary: `#F7931A`
-- Secondary: `#2B2B2B`
-- Background: `#FFF8F1`
-- Font: Plus Jakarta Sans (via `next/font/google`)
+## Design System
 
-Token warna & radius diatur di `app/globals.css` melalui `@theme` (Tailwind v4).
+| Token | Value |
+|-------|-------|
+| Primary | `#F7931A` |
+| Secondary | `#2B2B2B` |
+| Background | `#FFF8F1` |
+| Font | Plus Jakarta Sans |
+
+Color tokens and border radius are configured in `app/globals.css` via `@theme` (Tailwind v4).
+
+## Features
+
+- **Homepage** — Hero, categories, featured doctors/services, testimonials, trust badges
+- **About** — Company story, values, statistics
+- **Contact** — Contact info, embedded map, reservation form, FAQ
+- **Products** — Filterable listing of doctors and services
+- **Product Detail** — Full information, gallery, related items
+
+## License
+
+MIT
