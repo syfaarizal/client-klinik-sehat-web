@@ -37,7 +37,7 @@ export function Hero() {
 
           <h1 className="text-balance text-3xl font-extrabold leading-tight text-secondary sm:text-4xl lg:text-5xl">
             Kesehatan Anda,{" "}
-            <span className="bg-gradient-clinic bg-clip-text text-transparent">Prioritas Kami</span>
+            <span className="bg-gradient-clinic text-white px-2 bg-clip-text text-transparent">Prioritas Kami</span>
           </h1>
 
           <p className="max-w-lg text-base text-muted sm:text-lg">

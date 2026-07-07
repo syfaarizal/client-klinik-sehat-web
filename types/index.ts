@@ -82,6 +82,20 @@ export interface CompanyInfo {
   paymentMethods: string[];
 }
 
+export interface Article {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  image: string;
+  category: string;
+  author: string;
+  publishedAt: string;
+  readTime: number;
+  featured: boolean;
+}
+
 export interface NavChild {
   label: string;
   href: string;

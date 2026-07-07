@@ -24,7 +24,6 @@ export const NAV_LINKS: NavLink[] = [
     ],
   },
   { label: "Dokter", href: "/products" },
-  { label: "Fasilitas", href: "/about" },
-  { label: "Artikel", href: "/about" },
+  { label: "Artikel", href: "/artikel" },
   { label: "Kontak", href: "/contact" },
 ];

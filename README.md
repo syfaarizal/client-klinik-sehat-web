@@ -29,6 +29,8 @@ app/                    # App Router pages
   contact/             # Contact page
   products/            # Services & doctors listing
   products/[slug]/     # Individual service/doctor detail
+  artikel/             # Health articles listing
+  artikel/[slug]/      # Individual article detail
 
 components/
   ui/                  # Primitive UI components (button, card, accordion, etc.)
@@ -37,6 +39,7 @@ components/
 
 data/                   # Centralized data files
   products.ts          # Doctors and services data
+  articles.ts          # Health articles data
   categories.ts        # Service categories
   company.ts           # Company information
   testimonials.ts      # Customer testimonials
@@ -76,10 +79,11 @@ Color tokens and border radius are configured in `app/globals.css` via `@theme` 
 ## Features
 
 - **Homepage** — Hero, categories, featured doctors/services, testimonials, trust badges
-- **About** — Company story, values, statistics
+- **About** — Company story, values, statistics, facilities
 - **Contact** — Contact info, embedded map, reservation form, FAQ
 - **Products** — Filterable listing of doctors and services
 - **Product Detail** — Full information, gallery, related items
+- **Articles** — Health articles listing and detail pages
 
 ## License
 
