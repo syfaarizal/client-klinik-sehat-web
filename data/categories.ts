@@ -1,0 +1,58 @@
+import type { Category } from "@/types";
+
+export const categories: Category[] = [
+  {
+    id: "cat-1",
+    slug: "poli-umum",
+    name: "Poli Umum",
+    description: "Pemeriksaan dan penanganan umum",
+    image: "/images/service-umum.jpg",
+    icon: "stethoscope",
+    productCount: 0,
+  },
+  {
+    id: "cat-2",
+    slug: "poli-gigi",
+    name: "Poli Gigi",
+    description: "Perawatan dan pengobatan gigi",
+    image: "/images/service-gigi.jpg",
+    icon: "heart-pulse",
+    productCount: 0,
+  },
+  {
+    id: "cat-3",
+    slug: "poli-anak",
+    name: "Poli Anak",
+    description: "Pelayanan kesehatan anak",
+    image: "/images/service-anak.jpg",
+    icon: "baby",
+    productCount: 0,
+  },
+  {
+    id: "cat-4",
+    slug: "poli-kandungan",
+    name: "Poli Kandungan",
+    description: "Konsultasi kehamilan & kandungan",
+    image: "/images/service-kandungan.jpg",
+    icon: "heart",
+    productCount: 0,
+  },
+  {
+    id: "cat-5",
+    slug: "vaksinasi",
+    name: "Vaksinasi",
+    description: "Berbagai jenis vaksinasi",
+    image: "/images/service-vaksin.jpg",
+    icon: "syringe",
+    productCount: 0,
+  },
+  {
+    id: "cat-6",
+    slug: "medical-check-up",
+    name: "Medical Check Up",
+    description: "Paket pemeriksaan kesehatan",
+    image: "/images/service-mcu.jpg",
+    icon: "clipboard-check",
+    productCount: 0,
+  },
+];
